@@ -117,7 +117,7 @@ export default class Giveaway extends Command {
                 if (!parsed.length) return await int.reply(funcs.createEmbed("Invalid Cards", "None of those Card IDs are valid\nExample: `1x30503`", true));
 
                 for (const card of parsed) {
-                    const cardInfo = database.prepare("SELECT name, rating, color FROM madfut26cards WHERE id = ?").get(card.card_id) as any;
+                    const cardInfo = database.prepare("SELECT name, rating, color FROM madfut27cards WHERE id = ?").get(card.card_id) as any;
                     if (!cardInfo) { invalid.push(card.card_id); continue; }
 
                     const owned = dBase.cards.get(hostId, card.card_id);

@@ -89,7 +89,7 @@ export default class Dump extends Command {
             if (convertedPlayers.filter(player => !player.id || !player.name).length > 0) console.warn(`Found ${convertedPlayers.filter(player => !player.id || !player.name).length} invalid players (missing id or name)`);
 
             const updatedCount = dBase.updateMADFUTPlayers(convertedPlayers.filter(player => player.id && player.name));
-            await int.followUp(funcs.createEmbed("MADFUT 26: Dump Updated", `Total Players Found: \`${players.length}\`\nValid Players: \`${convertedPlayers.filter(player => player.id && player.name).length}\`\nInvalid Players: \`${convertedPlayers.filter(player => !player.id || !player.name).length}\`\nAdded/Updated: \`${updatedCount}\``));
+            await int.followUp(funcs.createEmbed("MADFUT 27: Dump Updated", `Total Players Found: \`${players.length}\`\nValid Players: \`${convertedPlayers.filter(player => player.id && player.name).length}\`\nInvalid Players: \`${convertedPlayers.filter(player => !player.id || !player.name).length}\`\nAdded/Updated: \`${updatedCount}\``));
         }
         catch (e) {
             console.error(e);

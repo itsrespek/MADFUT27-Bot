@@ -12,7 +12,7 @@ const cFile = "packs_update.json";
 export default async function PacksUpdater(client: Client) {
     const channel = client.channels.cache.get(config.Discord.Channels.News) as TextChannel; if (!channel) return;
     
-    const { data } = await axios.get(`${config.MADFUT.URLs.FireStore}/autoContent/26`);
+    const { data } = await axios.get(`${config.MADFUT.URLs.FireStore}/autoContent/27`);
     const currentUpdate = parseInt(data.fields?.packsUpdateNumber?.integerValue || "0"), lastUpdate = readCacheNumber(cFile); if (currentUpdate <= lastUpdate) return; if (!data.fields.packs?.arrayValue?.values) return;
 
     const formatName = (id: string): string => {

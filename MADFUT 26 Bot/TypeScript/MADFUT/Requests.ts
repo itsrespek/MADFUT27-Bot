@@ -70,6 +70,7 @@ export class Requests {
                             invitedUsername: { stringValue: user },
                             mode: { stringValue: "trading" },
                             badgeName: { stringValue: "nation_badge_45" },
+                            year: { stringValue: "27" },
                             node: { stringValue: "" },
                         },
                     },
@@ -205,8 +206,9 @@ export class Requests {
         return data;
     }
 
-    async getDocument(collection: string, id: string | number): Promise<any> {
-        const { data } = await axios.get(`${this.MADFUTData.FireStoreURL}/${collection}/${id}`);
+    async getDocument(collection: string, id: string | number, token: string | null = null): Promise<any> {
+        const headers = token ? { Authorization: `Bearer ${token}` } : undefined;
+        const { data } = await axios.get(`${this.MADFUTData.FireStoreURL}/${collection}/${id}`, { headers });
         return data;
     }
 

@@ -30,7 +30,7 @@ export default class Link extends Command {
             if (funcs.lock.has(int.user.id)) return await int.reply(funcs.createEmbed("Transaction In Progress", "You already have a transaction going\nPlease wait for it to finish first", true));
             funcs.lock.add(int.user.id);
 
-            await int.reply(funcs.createEmbed("Link Account", `Invited: \`${args.username}\` x\`1\` on MADFUT 26\nYou have 30 seconds to accept the invite` ))
+            await int.reply(funcs.createEmbed("Link Account", `Invited: \`${args.username}\` x\`1\` on MADFUT 27\nYou have 30 seconds to accept the invite` ))
             await req.getToken();
 
             const WsConnection = await new Trading(req.Info.IDToken!).getWS();

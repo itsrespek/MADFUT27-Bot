@@ -23,7 +23,7 @@ export default class Wallet extends Command {
             const packEntries = [...userPacks.map(p => `x\`${p.Total}\` ${getPackName(p.PackID)}`), ...userCustomPacks.map(p => `x\`1\` ${p.name} (Custom | Range: \`${p.minRating}-${p.maxRating}\` | ID: \`${p.id}\`)`)];
             const cardData = [];
             for (const card of userCards) {
-                const cardInfo = database.prepare("SELECT name, rating, color FROM madfut26cards WHERE id = ?").get(card.CardID) as any;
+                const cardInfo = database.prepare("SELECT name, rating, color FROM madfut27cards WHERE id = ?").get(card.CardID) as any;
                 cardData.push({
                     entry: cardInfo ? `x\`${card.Total}\` ${cardInfo.rating} ${cardInfo.name} (${cardInfo.color.toUpperCase()} | ID: \`${card.CardID}\`)` : `x\`${card.Total}\` Unknown Card (ID: \`${card.CardID}\`)`,
                     rating: cardInfo?.rating || 0

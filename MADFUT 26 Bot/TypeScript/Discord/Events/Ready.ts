@@ -9,7 +9,7 @@ export default class BotReady extends Event {
     }
 
     public async run(client: DiscordClient): Promise<void> {
-        console.log(`MADFUT 26 Bot: Online!`);
+        console.log(`MADFUT 27 Bot: Online!`);
         client.user?.setPresence({
             activities: [{ 
                 name: this.config.Discord.Status || 'Online', 

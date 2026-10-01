@@ -62,8 +62,8 @@ function generateAutoPrize(): GiveawayWinning {
         for (let i = 0; i < randomInt(1, 5); i++) {
             const rare = Math.random() < 0.05;
             const card = (rare
-                ? sqlDb.prepare("SELECT id, name, rating, color FROM madfut26cards WHERE rating >= 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()
-                : sqlDb.prepare("SELECT id, name, rating, color FROM madfut26cards WHERE rating > 0 AND rating < 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()) as any;
+                ? sqlDb.prepare("SELECT id, name, rating, color FROM madfut27cards WHERE rating >= 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()
+                : sqlDb.prepare("SELECT id, name, rating, color FROM madfut27cards WHERE rating > 0 AND rating < 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()) as any;
 
             if (!card || winning.cards?.some(c => c.card_id === card.id)) continue;
 

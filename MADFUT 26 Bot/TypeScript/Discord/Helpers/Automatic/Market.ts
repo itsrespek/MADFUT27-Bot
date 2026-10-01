@@ -27,8 +27,8 @@ async function hostAuction(client: Client) {
 
         const rare = Math.random() < 0.35;
         const card = (rare
-            ? sqlDb.prepare("SELECT id, name, rating, color FROM madfut26cards WHERE rating >= 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()
-            : sqlDb.prepare("SELECT id, name, rating, color FROM madfut26cards WHERE rating > 0 AND rating < 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()) as any;
+            ? sqlDb.prepare("SELECT id, name, rating, color FROM madfut27cards WHERE rating >= 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()
+            : sqlDb.prepare("SELECT id, name, rating, color FROM madfut27cards WHERE rating > 0 AND rating < 90 AND tradable = 1 ORDER BY RANDOM() LIMIT 1").get()) as any;
 
         if (!card) return;
 

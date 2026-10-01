@@ -46,7 +46,7 @@ export default class FreeTrade extends Command {
                     if (tradeResult.Given?.Cards && Array.isArray(tradeResult.Given.Cards)) {
                         for (const card of tradeResult.Given.Cards) {
                             if (card) {
-                                const c = db.prepare("SELECT name, rating, position, color FROM madfut26cards WHERE id = ?").get(card) as any;
+                                const c = db.prepare("SELECT name, rating, position, color FROM madfut27cards WHERE id = ?").get(card) as any;
                                 const key = c ? `${c.name}|${c.rating}|${c.position}|${c.color}` : `Unknown Card|?|Unknown|Unknown`;
                                 gCards.set(key, (gCards.get(key) || 0) + 1);
                             }

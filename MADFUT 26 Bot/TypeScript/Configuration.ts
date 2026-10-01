@@ -3,7 +3,7 @@ import path from "path";
 import { BotConfig, DiscordConfig, MADFUTConfig } from "./Discord/Helpers/Interface.js";
 
 const cFile = path.resolve(process.cwd(), "data");
-const DEFAULT_APP_CHECK = `eyJlcnJvciI6IlVOS05PV05fRVJST1IifQ==`;
+const DEFAULT_APP_CHECK = `eyJraWQiOiJBNzFLSHciLCJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiIxOjUwMjI1MzgyOTQwOmlvczpkOWYzNWRmYjkzY2NjMTc1YWJjMWQ5IiwiYXVkIjpbInByb2plY3RzLzUwMjI1MzgyOTQwIiwicHJvamVjdHMvdHJpdmVsYS1tYWRmdXQiXSwicHJvdmlkZXIiOiJkZXZpY2VfY2hlY2tfYXBwX2F0dGVzdCIsImlzcyI6Imh0dHBzOi8vZmlyZWJhc2VhcHBjaGVjay5nb29nbGVhcGlzLmNvbS81MDIyNTM4Mjk0MCIsImV4cCI6MTc5MDgxNzgxMSwiaWF0IjoxNzkwODE0MjExLCJqdGkiOiJiQWg0WDZLQ0xxUXlEYXBVRDB1TVFrNVF2RnpaX1l2U0ZqZElfVUhFRXpZIn0.NyGl1UWK-GXKTdEhPs_3DbRXo15_IpgGjvRqrrMWeO_tzNfnolnGlzQZ0tfKQm0yRNZGU9QUwkqXlVVMOb2CpDdnKKU21PO4tHFdSeJcphfsBMrmIkjhOQQFJA6VtyVMnGzsn3dINnbxNf8bjdMKFaRSYEJ1rNKWUyiw5_rCdPJigzeOLMw6AouFpZeeHf7CZSsgw3KatV-8xSnqM5UIyhiOtpWbAfadNyTI6OFiyEqVnwkupc-aAyFLT7zZZ83_92sv5ZMzK9PJOcXsCzCth2BTnnR4b1xkQtE_f5cudBro2e-_9IqwHAwdHSB3ou_Bo-po6gij00P4L9Byg5mDRfuKJKWlLK42ip9wnN6FZIMm5mqmjPkHlxwdX_VL3T9ZLXXzXLGaVEfkzrPMkhsiJ_efBuEVQpxpFz6fCI4SA_0pRYuxOMVAphgOWyxdyNIS5MqeEgok4zg347M2t4WuymStV2fyjUVLI6udfoXjtFQMz-cjyqMm4SkBi2hmLZWR`;
 
 export default class Configuration {
     private static config: BotConfig;
@@ -70,9 +70,9 @@ export default class Configuration {
                 },
                 Headers: {
                     'X-Firebase-AppCheck': AppCheck,
-                    "User-Agent": "FirebaseAuth.iOS/12.3.0 com.trivela.madfut/1.0 iPhone/26.0 hw/iPhone14_7",
+                    "User-Agent": "FirebaseAuth.iOS/12.3.0 com.trivela.madfut/27.0.0 iPhone/27.2 hw/iPhone15_3",
                     "X-Client-Version": "iOS/FirebaseSDK/12.3.0/FirebaseCore-iOS",
-                    'X-Firebase-GMPID': '1:50225382940:android:94e2c45dc74e5999abc1d9',
+                    'X-Firebase-GMPID': '1:50225382940:ios:d9f35dfb93ccc175abc1d9',
                     'X-Android-Package': 'com.trivela.madfut',
                     'Accept-Language': 'en-US',
                     'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ export default class Query extends Command {
             "query",
             "[DEV]: Query the database..",
             [
-                { name: 'query', description: 'What SQL? | Example: SELECT * FROM madfut26tables', type: ApplicationCommandOptionType.String, required: true },
+                { name: 'query', description: 'What SQL? | Example: SELECT * FROM madfut27tables', type: ApplicationCommandOptionType.String, required: true },
                 { name: 'params', description: 'Optional bind values as a JSON array | Example: ["Unai", 99, null]', type: ApplicationCommandOptionType.String, required: false },
                 { name: 'private', description: 'Only show the results to you', type: ApplicationCommandOptionType.Boolean, required: false }
             ]

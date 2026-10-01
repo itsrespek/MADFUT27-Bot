@@ -105,7 +105,7 @@ export default async function EvolutionsUpdater(client: Client) {
     const cfg = await req.getConfig(v);
     if (!cfg) return;
 
-    const { data } = await axios.get(`${config.MADFUT.URLs.FireStore}/autoContent/26`);
+    const { data } = await axios.get(`${config.MADFUT.URLs.FireStore}/autoContent/27`);
     if (!data) return;
 
     const sUpd = parseInt(data.fields?.evoStandardUpdateNumber?.integerValue || "0");

@@ -48,7 +48,7 @@ export default class Deposit extends Command {
                     tradesDone++;
                     if (tradeResult.Received?.Cards && Array.isArray(tradeResult.Received.Cards)) {
                         for (const card of tradeResult.Received.Cards) {
-                            const cardInfo = typeof card === 'string' ? db.prepare("SELECT name, rating, position, color FROM madfut26cards WHERE id = ?").get(card) as any : null;
+                            const cardInfo = typeof card === 'string' ? db.prepare("SELECT name, rating, position, color FROM madfut27cards WHERE id = ?").get(card) as any : null;
                             if (!cardInfo) continue;
                             dBase.cards.add(int.user.id, card, 1);
                             const key = `${cardInfo.name}|${cardInfo.rating}|${cardInfo.position}|${cardInfo.color}`;

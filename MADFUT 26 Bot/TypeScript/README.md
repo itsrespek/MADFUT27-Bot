@@ -1,5 +1,5 @@
 Hey, thank you for checking out my repo.
-Here is my MADFUT 26 bot created by mxltple with the sole purpose of bringing the community closer to reaching that goal of maximum collection
+Here is my MADFUT 27 bot created by mxltple with the sole purpose of bringing the community closer to reaching that goal of maximum collection
 This bot was created as a solo project, trying to show the community that MADFUT bots can still be created even in 2026
 My bot offers everything you can think of. Here are some of the things it offers:
 

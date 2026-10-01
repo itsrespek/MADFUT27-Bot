@@ -43,7 +43,7 @@ export default async function SBCUpdater(client: Client) {
     const channel = client.channels.cache.get(config.Discord.Channels.News) as TextChannel; if (!channel) return;
 
     // Live SBCs from autoContent
-    const { data } = await axios.get(`${config.MADFUT.URLs.FireStore}/autoContent/26`), cur = parseInt(data.fields?.sbcsUpdateNumber?.integerValue || "0");
+    const { data } = await axios.get(`${config.MADFUT.URLs.FireStore}/autoContent/27`), cur = parseInt(data.fields?.sbcsUpdateNumber?.integerValue || "0");
     if (cur > readCacheNumber(cFile)) {
         const sbcs = data.fields?.sbcs?.arrayValue?.values?.map((v: any) => v.mapValue.fields) || []; if (!sbcs.length) return;
 

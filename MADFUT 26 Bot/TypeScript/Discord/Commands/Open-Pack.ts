@@ -76,7 +76,7 @@ export default class OpenPack extends Command {
                     for (const card of dBase.packCards.getRandom(roll.min ?? null, roll.max ?? null, roll.count, nationId, position, roll.exact ?? null, roll.colors ?? null, roll.specialOnly ?? false)) {
                         dBase.cards.add(int.user.id, card.id, 1);
 
-                        const cardInfo = database.prepare("SELECT name, rating, color FROM madfut26cards WHERE id = ?").get(card.id) as any;
+                        const cardInfo = database.prepare("SELECT name, rating, color FROM madfut27cards WHERE id = ?").get(card.id) as any;
                         packCards.push({ text: `\`1x\` ${cardInfo.rating} ${cardInfo.name} (${(cardInfo.color || 'Unknown').toUpperCase()})`, rating: cardInfo.rating || 0 });
                     }
                 }

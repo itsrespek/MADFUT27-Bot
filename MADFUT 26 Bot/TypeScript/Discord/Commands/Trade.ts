@@ -154,7 +154,7 @@ export default class Trade extends Command {
                 if (o.picks > 0) lines.push(`- \`${o.picks.toLocaleString()}\` Player Picks`);
 
                 const sorted = o.cards
-                    .map(card => ({ ...card, info: db.prepare("SELECT name, rating, color FROM madfut26cards WHERE id = ?").get(card.card_id) as any }))
+                    .map(card => ({ ...card, info: db.prepare("SELECT name, rating, color FROM madfut27cards WHERE id = ?").get(card.card_id) as any }))
                     .sort((a, b) => (b.info?.rating || 0) - (a.info?.rating || 0));
                 for (const card of sorted) {
                     lines.push(card.info

@@ -30,7 +30,7 @@ export async function cSlashCMDs(client: DiscordClient, dir: string = '', groups
     if (groups.length === 1 && groups[0] === 'mf' && !guildCMDs.find(c => c.name === 'mf')) {
         guildCMDs.push({
             name: "mf",
-            description: "MADFUT 26 Bot Commands",
+            description: "MADFUT 27 Bot Commands",
             options: []
         });
     }

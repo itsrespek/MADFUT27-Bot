@@ -31,7 +31,7 @@ export default class ShowWallet extends Command {
             ];
             const cardData = [];
             for (const card of userCards) {
-                const cardInfo = database.prepare("SELECT name, rating, color FROM madfut26cards WHERE id = ?").get(card.CardID) as any;
+                const cardInfo = database.prepare("SELECT name, rating, color FROM madfut27cards WHERE id = ?").get(card.CardID) as any;
                 cardData.push({
                     entry: cardInfo ? `\`x${card.Total}\` ${cardInfo.rating} ${cardInfo.name} (${cardInfo.color.toUpperCase()} | ID: \`${card.CardID}\`)` : `\`x${card.Total}\` Unknown Card (ID: \`${card.CardID}\`)`,
                     rating: cardInfo?.rating || 0

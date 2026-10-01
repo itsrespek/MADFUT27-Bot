@@ -43,7 +43,7 @@ export default class Pay extends Command {
             if (args.cards) {
                 const invalid: string[] = [];
                 for (const card of funcs.parseCards(/^\d+$/.test(args.cards) ? `1x${args.cards}` : args.cards)) {
-                    const cardInfo = db.prepare("SELECT name, rating, color FROM madfut26cards WHERE id = ?").get(card.card_id) as any;
+                    const cardInfo = db.prepare("SELECT name, rating, color FROM madfut27cards WHERE id = ?").get(card.card_id) as any;
                     if (!cardInfo) {
                         invalid.push(card.card_id);
                         continue;

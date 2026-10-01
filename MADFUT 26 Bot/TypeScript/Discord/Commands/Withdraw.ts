@@ -56,7 +56,7 @@ export default class Withdraw extends Command {
                         if (tradeResult.Given?.Cards && Array.isArray(tradeResult.Given.Cards)) {
                             for (const card of tradeResult.Given.Cards) {
                                 if (card) {
-                                    const c = db.prepare("SELECT name, rating, position, color FROM madfut26cards WHERE id = ?").get(card) as any;
+                                    const c = db.prepare("SELECT name, rating, position, color FROM madfut27cards WHERE id = ?").get(card) as any;
                                     const key = c ? `${c.name}|${c.rating}|${c.position}|${c.color}` : `Unknown Card|?|Unknown|Unknown`;
                                     gCards.set(key, (gCards.get(key) || 0) + 1);
                                 }
@@ -140,7 +140,7 @@ export default class Withdraw extends Command {
                     req.releaseToken();
                     for (const card of funcs.parseCards(args.cards)) {
                         dBase.cards.remove(int.user.id, card.card_id, card.quantity);
-                        const cardInfo = db.prepare("SELECT name, rating, position, color FROM madfut26cards WHERE id = ?").get(card.card_id) as any;
+                        const cardInfo = db.prepare("SELECT name, rating, position, color FROM madfut27cards WHERE id = ?").get(card.card_id) as any;
                         given.push({
                             rating: cardInfo?.rating || 0,
                             text: cardInfo ? `x\`${card.quantity}\` ${cardInfo.rating} ${cardInfo.name} (${cardInfo.position}, \`${String(cardInfo.color).toUpperCase()}\`)` : `x\`${card.quantity}\` Unknown Card`

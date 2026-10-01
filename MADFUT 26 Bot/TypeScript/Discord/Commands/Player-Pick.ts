@@ -23,11 +23,11 @@ export default class PlayerPick extends Command {
             if (dBase.picks.get(userId) < 1) return await int.reply(funcs.createEmbed("No Player Picks", `You don't have ANY player picks\nPicks Total: \`${dBase.picks.get(userId).toLocaleString()}\``, true));
 
             const roll = Math.random(), target = roll < 0.6 ? randomInt(84, 91) : roll < 0.9 ? randomInt(92, 95) : randomInt(96, 99);
-            const grab = (spread: number) => db.prepare("SELECT id, name, rating, color FROM madfut26cards WHERE tradable = 1 AND rating BETWEEN ? AND ? ORDER BY RANDOM() LIMIT 5").all(target - spread, target + spread) as any[];
+            const grab = (spread: number) => db.prepare("SELECT id, name, rating, color FROM madfut27cards WHERE tradable = 1 AND rating BETWEEN ? AND ? ORDER BY RANDOM() LIMIT 5").all(target - spread, target + spread) as any[];
             let options = grab(0);
             if (options.length < 5) options = grab(1);
             if (options.length < 5) options = grab(2);
-            if (options.length < 5) options = db.prepare("SELECT id, name, rating, color FROM madfut26cards WHERE tradable = 1 AND rating >= 80 ORDER BY RANDOM() LIMIT 5").all() as any[];
+            if (options.length < 5) options = db.prepare("SELECT id, name, rating, color FROM madfut27cards WHERE tradable = 1 AND rating >= 80 ORDER BY RANDOM() LIMIT 5").all() as any[];
 
             funcs.lock.add(userId);
 

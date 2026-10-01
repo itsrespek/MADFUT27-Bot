@@ -30,11 +30,11 @@ export default class Restock extends Command {
 
             rewards.push("`35` Bot Trades", "`3,000,000` Coins", "`1x` Custom Pack Token", "`2x` Player Picks", "`1x` 100% Random Pack", `\`1x\` ${getPackName(bonusPack)} Pack`);
 
-            for (const card of database.prepare("SELECT id FROM madfut26cards WHERE tradable = 1 ORDER BY RANDOM() LIMIT 9").all() as { id: string }[]) {
+            for (const card of database.prepare("SELECT id FROM madfut27cards WHERE tradable = 1 ORDER BY RANDOM() LIMIT 9").all() as { id: string }[]) {
                 const amount = Math.floor(Math.random() * 8) + 1;
                 dBase.cards.add(int.user.id, card.id, amount);
 
-                const cardInfo = database.prepare("SELECT name, rating, color FROM madfut26cards WHERE id = ?").get(card.id) as any;
+                const cardInfo = database.prepare("SELECT name, rating, color FROM madfut27cards WHERE id = ?").get(card.id) as any;
                 rewards.push(`\`x${amount}\` ${cardInfo.rating} ${cardInfo.name} (${(cardInfo.color || 'Unknown').toUpperCase()})`);
             }
 
